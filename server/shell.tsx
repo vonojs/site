@@ -13,10 +13,10 @@ export function Shell(props: any) {
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
 					{import.meta.env.DEV && <script type="module" src="/@vite/client" />}
 					{props.head}
-					<HydrationScript />
 				</head>
 				<body>
 					<div id="app">{props.children}</div>
+					<HydrationScript />
 					<script type="module" src={manifest["/ui/entry.tsx"].file} />
 				</body>
 			</html>
