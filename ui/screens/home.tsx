@@ -46,7 +46,9 @@ export const Home = () => (
 				class="hidden dark:block dark:absolute w-full h-full object-cover"
 			/>
 			<div class="hidden dark:absolute bottom-0 inset-x-0 top-0 bg-gradient-radial from-transparent via-transparent to-vite-950 z-20"></div>
-			<div class="absolute bottom-0 h-72 inset-x-0 bg-gradient-linear shape-b from-transparent dark:to-vite-950 to-vite-100 z-20" />
+			<div class="absolute bottom-0 h-64 inset-x-0 bg-gradient-linear shape-b from-transparent dark:to-vite-950 to-vite-100 z-20" />
+			<div class="absolute bottom-0 h-48 inset-x-0 bg-gradient-linear shape-b from-transparent dark:to-vite-950 to-vite-100 z-20" />
+			<div class="absolute bottom-0 h-24 inset-x-0 bg-gradient-linear shape-b from-transparent dark:to-vite-950 to-vite-100 z-20 opacity-50" />
 		</section>
 		<section class="h-screen dark:bg-vite-950 bg-vite-100" />
 	</>
