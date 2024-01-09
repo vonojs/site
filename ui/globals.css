@@ -1,0 +1,4 @@
+body { background-color: hsl(210, 38%, 94%); }
+@media (prefers-color-scheme: dark) {
+  body { background-color: hsl(208, 30%, 12%)}
+}
