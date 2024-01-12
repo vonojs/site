@@ -1,4 +1,10 @@
-import { defineConfig, presetTypography, presetWebFonts, presetWind } from "unocss";
+import {
+	defineConfig,
+	presetAttributify,
+	presetWebFonts,
+	presetWind,
+	transformerAttributifyJsx,
+} from "unocss";
 
 export default defineConfig({
 	content: {
@@ -13,11 +19,12 @@ export default defineConfig({
 			fonts: {
 				display: "Press Start 2P",
 				sans: "Montserrat",
-				code: "Space Mono"
-			}
-		})
+				code: "Space Mono",
+			},
+		}),
+		presetAttributify(),
 	],
-
+	transformers: [transformerAttributifyJsx()],
 	theme: {
 		colors: {
 			primary: {
@@ -33,19 +40,6 @@ export default defineConfig({
 				"900": "hsl(146, 39%, 20%)",
 				"950": "hsl(156, 53%, 10%)",
 			},
-			// vite: {
-			// 	"50": "hsl(284, 100%, 98%)",
-			// 	"100": "hsl(282, 100%, 95%)",
-			// 	"200": "hsl(281, 100%, 91%)",
-			// 	"300": "hsl(281, 100%, 84%)",
-			// 	"400": "hsl(281, 100%, 73%)",
-			// 	"500": "hsl(281, 100%, 63%)",
-			// 	"600": "hsl(281, 99%, 60%)",
-			// 	"700": "hsl(281, 88%, 47%)",
-			// 	"800": "hsl(282, 82%, 39%)",
-			// 	"900": "hsl(283, 80%, 32%)",
-			// 	"950": "hsl(282, 100%, 22%)",
-			// },
 			vite: {
 				"50": "hsl(204, 33%, 97%)",
 				"100": "hsl(210, 38%, 94%)",
@@ -59,19 +53,6 @@ export default defineConfig({
 				"900": "hsl(207, 30%, 24%)",
 				"950": "hsl(208, 30%, 12%)",
 			},
-			// vite: {
-			// 	"50": "hsl(221, 100%, 96%)",
-			// 	"100": "hsl(224, 100%, 93%)",
-			// 	"200": "hsl(225, 100%, 88%)",
-			// 	"300": "hsl(227, 100%, 81%)",
-			// 	"400": "hsl(233, 100%, 73%)",
-			// 	"500": "hsl(237, 100%, 70%)",
-			// 	"600": "hsl(242, 91%, 59%)",
-			// 	"700": "hsl(243, 69%, 51%)",
-			// 	"800": "hsl(242, 65%, 41%)",
-			// 	"900": "hsl(240, 57%, 34%)",
-			// 	"950": "hsl(242, 57%, 20%)",
-			// },
 			hono: {
 				"50": "hsl(43, 100%, 96%)",
 				"100": "hsl(43, 95%, 92%)",
@@ -84,6 +65,19 @@ export default defineConfig({
 				"800": "hsl(24, 77%, 34%)",
 				"900": "hsl(24, 73%, 28%)",
 				"950": "hsl(21, 78%, 15%)",
+			},
+			accent: {
+				"50": "#fef1f1",
+				"100": "#fce8e9",
+				"200": "#f9d2db",
+				"300": "#f4aec2",
+				"400": "#e486a9",
+				"500": "#d45e93",
+				"600": "#be4188",
+				"700": "#a0317b",
+				"800": "#872c72",
+				"900": "#712867",
+				"950": "#40113c",
 			},
 		},
 	},

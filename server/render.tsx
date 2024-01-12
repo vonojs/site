@@ -4,16 +4,16 @@ import { type Context } from "hono";
 import { RequestContext } from "hono/jsx-renderer";
 
 export default function render(c: Context) {
-	const assets = manifest["ui/client.entry.tsx"].css?.map((css) => (
-		<link rel="stylesheet" href={css} />
-	));
 	return (
 		<RequestContext.Provider value={c}>
 			<App
 				head={
 					<>
 						<title>Vono</title>
-						{import.meta.env.PROD && { assets }}
+						{import.meta.env.PROD &&
+							manifest["ui/client.entry.tsx"].css?.map((css) => (
+								<link rel="stylesheet" href={css} />
+							))}
 					</>
 				}
 				scripts={

@@ -1,10 +1,8 @@
-import { Navigation } from "./components/navigation";
-import { Footer } from "./components/footer";
 import { Route } from "../modules/Route";
 import { Philosophy } from "./screens/philosophy";
 import { Docs } from "./screens/docs";
 import { Home } from "./screens/home";
-import Layout from "./components/layout";
+import Layout from "./components/common/layout";
 
 const App = (props: { head: any; scripts: any }) => (
 	<html>

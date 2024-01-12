@@ -1,4 +1,76 @@
-body { background-color: hsl(210, 38%, 94%); }
+body { background-color: hsl(210, 38%, 94%); font-family: Montserrat; }
 @media (prefers-color-scheme: dark) {
   body { background-color: hsl(208, 30%, 12%)}
 }
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: hsl(203, 20%, 48%); /* less saturated vite 500 for regular text */
+  background: hsl(204, 33%, 97%); /* vite 50 for background */
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-section,
+.hljs-link {
+  color: hsl(203, 35%, 60%); /* less saturated hono 500 */
+}
+
+.hljs-title {
+  color: transparent; 
+  background: linear-gradient(
+    to right,
+    hsl(203, 35%, 74%),
+    #f4aec2 50%,
+    hsl(39, 94%, 72%) 100%
+  );
+  background-clip: text;
+}
+
+.hljs-string,
+.hljs-name,
+.hljs-type,
+.hljs-attribute,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
+  color: hsl(206, 37%, 39%); /* less saturated hono 200 */
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion,
+.hljs-meta {
+  color: hsl(24, 50%, 34%); /* less saturated hono 800 */
+}
+
+.hljs-doctag {
+  font-weight: bold;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-number,
+.hljs-regexp,
+.hljs-literal {
+  color: hsl(205, 37%, 32%); /* vite 700 */
+}
+
+.hljs-attribute {
+  color: hsl(203, 35%, 60%); /* vite 400 */
+}
+
