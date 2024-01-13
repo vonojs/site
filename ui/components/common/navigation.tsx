@@ -18,9 +18,9 @@ export const Navigation = () => (
 					<a class="hover:text-vite-200 active:text-vite-300 transition duration-150" href="/docs">docs</a>
 				</li>
 				{/* <div class="text-hono-500">·</div> */}
-				<li>
+				{/* <li>
 					<a class="hover:text-vite-200 active:text-vite-300 transition duration-150" href="/philosophy">philosophy</a>
-				</li>
+				</li> */}
 				{/* <div class="text-hono-500">·</div> */}
 				<li>
 					<a target="_blank" href="https://github.com/vonojs">

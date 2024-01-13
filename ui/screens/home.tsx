@@ -7,6 +7,7 @@ export const Home = () => (
 		<Hero />
 		<Overview />
 		<Hono />
+		<VonoOverview />
 	</>
 );
 
@@ -68,23 +69,6 @@ const Hero = () => (
 	</section>
 );
 
-/*
-
-	Vite plugin for creating full stack applications
-
-	Hono
-	- batteries included server
-	- ultra fast
-	- full stack typescript
-
-	Vono
-	- drop in, zero migration
-	- the glue beteween vite and hono
-	- ultra minimal, gets out of your way
-	- deploy to any platform
-	- build any abstraction
-*/
-
 const step1code = `import { defineConfig } from 'vite'
 import cloudflare from '@vonojs/vono/adaptors'
 import vono from '@vonojs/vono'
@@ -110,7 +94,7 @@ document.getElementById('ping-btn')
 })`;
 
 const Overview = () => (
-	<section space-y-16>
+	<section space-y-16 p-4>
 		<div mx-auto space-y-4>
 			<h2 text-5xl text-vite-700 dark:text-vite-100 text-center font-display>
 				Step 1
@@ -142,15 +126,31 @@ const Overview = () => (
 );
 
 const Hono = () => (
-	<section relative bg-gradient-linear from-hono-400 to-hono-500 border-t border-b border-t-hono-300 border-b-hono-600 shape-b mt-32>
+	<section
+		relative
+		mt-32
+		bg-gradient-linear
+		from-hono-400
+		to-hono-500
+		shape-b
+		border-t
+		border-b
+		border-t-hono-300
+		border-b-hono-600
+		shadow-lg
+		shadow-hono-800
+	>
 		<div py-8 />
-		<div relative max-w-5xl mx-auto p-4 space-y-8>
-			<h2 text-5xl font-display text-hono-950 leading-snug>
-				<span>Hono: </span>
-				<br /> Fast, <br /> Lightweight, <br /> Web-standards
+		<div z-10 relative max-w-5xl mx-auto p-4 space-y-8>
+			<h2 text-3xl md="text-5xl" font-display text-hono-950 space-y-4>
+				<span inline-block>Hono: </span>
+				<span inline-block>Fast,</span>
+				<span inline-block>Lightweight,</span>
+				<span inline-block>Web-standards</span>
 			</h2>
-			<p text-2xl font-sans text-hono-900>
-				Hono is a fast and fully featured <br/> web framework designed for the edge.
+			<p text-xl md:text-2xl font-sans text-hono-900>
+				Hono is a fast and fully featured <br /> web framework designed for the
+				edge.
 			</p>
 			<div grid md:grid-cols-2 lg:grid-cols-4 gap-4>
 				<HonoGridItem
@@ -171,14 +171,33 @@ const Hono = () => (
 					text="Super clean APIs. First-class TypeScript support. Now, we've got 'Types'."
 				/>
 			</div>
-			<img hidden lg="block" absolute top-6 right-4 opacity-20 src="/hono-logo.png" />
+			<img
+				hidden
+				lg="block"
+				absolute
+				top-6
+				right-4
+				opacity-20
+				src="/hono-logo.png"
+			/>
 		</div>
 		<div py-8 />
+		<div class="absolute inset-0 dots" />
 	</section>
 );
 
 const HonoGridItem = (props: { title: string; text: string }) => (
-	<div p-4 inline-block rounded-lg shadow-inset shadow-lg shadow-hono="600/40">
+	<div
+		p-4
+		inline-block
+		rounded-lg
+		shadow-inset
+		shadow-lg
+		bg-hono-500
+		shadow-hono="600/40"
+		border
+		border-hono="300/40"
+	>
 		<h3 text-xl font-code>
 			{props.title}
 		</h3>
@@ -212,6 +231,19 @@ const Copy = () => (
 			stroke-linejoin="round"
 		/>
 	</svg>
+);
+
+const VonoOverview = () => (
+	<section relative p-4 w-full h-48>
+		<div py-8 />
+		<div max-w-5xl mx-auto>
+			<h2 text-5xl font-display text-vite-300 text-center>
+				IDK MAN
+			</h2>
+			<p text-lg></p>
+		</div>
+		<div p-8 />
+	</section>
 );
 
 export function heroSystem() {
