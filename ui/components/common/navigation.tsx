@@ -1,21 +1,63 @@
-import { DisplayText } from "./Text";
+import { DisplayText } from "./text";
 
 export const Navigation = () => (
-	<header class="fixed inset-x-12 mt-2 rounded-full py-2 px-4 flex items-center justify-center overflow-clip text-vite-100 dark:text-vite-50 z-99 border border-vite-500">
-		<a href="/" class="z-20">
-			<DisplayText iter={10} gap={1} class="text-3xl">
+	<header
+		fixed
+		inset-x-12
+		mt-2
+		rounded-full
+		py-2
+		px-4
+		flex
+		items-center
+		justify-center
+		overflow-clip
+		text-vite-100
+		dark:text-vite-50
+		z-99
+		border
+		border-vite-500
+	>
+		<a href="/" z-20>
+			<DisplayText iter={10} gap={1} text-3xl>
 				VONO
 			</DisplayText>
 		</a>
 
-		<div class="absolute inset-0 flex items-center justify-between py-2 px-4">
+		<div absolute inset-0 flex items-center justify-between py-2 px-4>
 			<div>
-				<Search class="absolute top-1/2 -translate-y-1/2 left-6" />
-				<input class="peer w-full max-w-200px bg-vite-200/20 dark:bg-vite-600/20 border border-vite-600 dark:border-vite-400 rounded-full p-1 px-2 pl-8 opacity-20 hover:opacity-50 transition focus:opacity-100 outline-none" />
+				<Search absolute top="1/2" translate-y="-1/2" left-6 />
+				<input
+					peer
+					w-full
+					max-w-200px
+					bg-vite="200/20"
+					dark:bg-vite="600/20"
+					border
+					border-vite-600
+					dark:border-vite-400
+					rounded-full
+					p-1
+					px-2
+					pl-8
+					opacity-20
+					hover:opacity-50
+					transition
+					focus:opacity-100
+					outline-none
+				/>
 			</div>
-			<ul class="flex items-center space-x-4 font-sans">
+			<ul flex items-center space-x-4 font-sans>
 				<li>
-					<a class="hover:text-vite-200 active:text-vite-300 transition duration-150" href="/docs">docs</a>
+					<a
+						hover:text-vite-200
+						active:text-vite-300
+						transition
+						duration-150
+						href="/docs"
+					>
+						docs
+					</a>
 				</li>
 				{/* <div class="text-hono-500">·</div> */}
 				{/* <li>
@@ -29,12 +71,19 @@ export const Navigation = () => (
 				</li>
 			</ul>
 		</div>
-		<div class="absolute -z-10 inset-0 backdrop-blur-sm bg-vite-300/30 dark:bg-vite-600/30" />
+		<div
+			absolute
+			z="-10"
+			inset-0
+			backdrop-blur-sm
+			bg-vite="300/30"
+			dark:bg-vite="600/30"
+		/>
 	</header>
 );
 
 const Search = (props: any) => (
-	<figure class={props.class}>
+	<figure {...props}>
 		<svg
 			width="24px"
 			height="24px"

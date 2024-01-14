@@ -6,11 +6,11 @@ export function Code(props: { children: string, title?: string }) {
 	}).value;
 	return (
 		<div
+			max-w-2xl
+			mx-auto
 			bg="vite-900"
 			relative
 			w-full
-			max-w-3xl
-			mx-auto
 			p-4
 			rounded-lg
 			min-h-100px
@@ -23,10 +23,11 @@ export function Code(props: { children: string, title?: string }) {
 				<div w-4 h-4 bg="vite-500" rounded-full />
 			</div>
 			<div
+				hidden
+				sm:flex
 				absolute
 				top-2
 				inset-x-0
-				flex
 				justify-center
 				items-center
 				font-code
@@ -37,9 +38,9 @@ export function Code(props: { children: string, title?: string }) {
 			<button absolute right-2 top-2 w-8 h-8>
 				<Copy />
 			</button>
-			<div mt-6 text-vite-200>
+			<div w-full mt-6 text-vite-200 overflow-x-scroll overflow-hidden>
 				<code>
-					<pre dangerouslySetInnerHTML={{ __html: code }} />
+					<pre pb-5 dangerouslySetInnerHTML={{ __html: code }} />
 				</code>
 			</div>
 		</div>

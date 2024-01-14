@@ -1,13 +1,14 @@
 import { scroll, animate, ScrollOffset } from "motion";
-import { DisplayText } from "../components/common/Text";
+import { DisplayText } from "../components/common/text";
 import { Code } from "../components/common/code";
 
 export const Home = () => (
 	<>
 		<Hero />
 		<Overview />
+		<MakeItFullStack />
 		<Hono />
-		<VonoOverview />
+		<BuildYourOwn />
 	</>
 );
 
@@ -29,13 +30,13 @@ const Hero = () => (
 				The <i>anti-framework</i> framework plugin for Vite
 			</h2>
 			<h3 id="hero-text" class="text-xl text-center font-sans">
-				Build full-stack web apps and frameworks <br /> with the full power of{" "}
+				Transform your{" "}
 				<span class="inline-block font-display text-vite-500 dark:text-vite-200 translate-y-1">
 					Vite
 				</span>{" "}
-				and{" "}
+				app into a <br /> full-stack framework with the power of{" "}
 				<span class="inline-block font-display text-hono-500 translate-y-1">
-					Hono
+					Hono.
 				</span>
 			</h3>
 			<div class="pt-16" />
@@ -122,8 +123,29 @@ const Overview = () => (
 			</p>
 			<Code title=".src/App.tsx">{step3code}</Code>
 		</div>
+		{/* <p text-vite-700 dark:text-vite-100 text-center max-w-3xl mx-auto text-2xl>
+			Vono lets you drop in a Hono server to any Vite app and deploy to
+			Cloudflare, Netlify, Vercel, Deno, Bun, and more.
+		</p> */}
 	</section>
 );
+/*
+	Build your own focused framework
+	- only does what you need and nothing more
+	- significantly decrease the complexity
+	- full control over everything
+
+	Make an existing Vite app Full Stack
+	- as much or as little server as you want
+	- streaming SSR and prerendering, or just use it to handle api routes
+	- non opinionated, works for you, not against you
+	- zero bloat, zero legacy, zero lock-in
+
+	Hono
+	- Edge Native
+	- built for the modern web
+	- ultra-lightweight yet batteries included
+*/
 
 const Hono = () => (
 	<section
@@ -154,13 +176,8 @@ const Hono = () => (
 			</p>
 			<div grid md:grid-cols-2 lg:grid-cols-4 gap-4>
 				<HonoGridItem
-					title="Ultrafast & Lightweight"
-					text="The router RegExpRouter is really fast. The hono/tiny preset is under
-			14kB. Using only Web Standard APIs."
-				/>
-				<HonoGridItem
-					title="Multi-runtime"
-					text="Works on Cloudflare, Fastly, Deno, Bun, Lagon, AWS, or Node.js. The same code runs on all platforms."
+					title="Edge Native"
+					text="Built for the edge, with modern web standards. No legacy, no lock-in."
 				/>
 				<HonoGridItem
 					title="Batteries Included"
@@ -169,6 +186,10 @@ const Hono = () => (
 				<HonoGridItem
 					title="Delightful DX"
 					text="Super clean APIs. First-class TypeScript support. Now, we've got 'Types'."
+				/>
+				<HonoGridItem
+					title="Blazing Fast"
+					text="Hono outperforms traditional node servers in a tiny 14kb bundle."
 				/>
 			</div>
 			<img
@@ -233,14 +254,58 @@ const Copy = () => (
 	</svg>
 );
 
-const VonoOverview = () => (
-	<section relative p-4 w-full h-48>
+const MakeItFullStack = () => (
+	<section relative p-4 w-full>
 		<div py-8 />
 		<div max-w-5xl mx-auto>
 			<h2 text-5xl font-display text-vite-300 text-center>
-				IDK MAN
+				Make it{" "}
+				<span
+					bg-gradient-linear
+					from-vite-200
+					shape-br
+					to-hono-400
+					bg-clip-text
+					text-transparent
+				>
+					Full Stack
+				</span>
 			</h2>
-			<p text-lg></p>
+			<p
+				text-2xl
+				text-center
+				text-vite-500
+				dark:text-vite-300
+				max-w-2xl
+				mx-auto
+				mt-8
+			>
+				Turn any Vite app full-stack and deploy to the{" "}
+				<span font-code text-hono-600 dark:text-hono-300>
+					Edge
+				</span>{" "}
+				with zero config. Combine React and HTMX, Svelte and Lua, and everything
+				in-between.
+			</p>
+			<div grid lg:grid-cols-2 gap-4>
+				
+			</div>
+		</div>
+		<div p-8 />
+	</section>
+);
+
+const BuildYourOwn = () => (
+	<section relative p-4 w-full>
+		<div py-8 />
+		<div max-w-5xl mx-auto>
+			<h2 text-5xl font-display text-vite-300 text-center>
+				Build your own focused framework
+			</h2>
+			<p text-lg text-center text-vite-500 dark:text-vite-300>
+				Build just what you need, without the complexity.
+			</p>
+			<div grid></div>
 		</div>
 		<div p-8 />
 	</section>
