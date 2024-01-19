@@ -2,7 +2,7 @@
 
 Hello friend! Welcome to the Vono docs. I promise using Vono is about the simplest thing you'll ever do in todays world of web development.
 
-First, install `@vonojs/vono` and add the plugin to your Vite config. Then create a [Hono](https://hono.dev) app in `server/index.{js/ts/jsx/tsx}`. Lastly, update your build script your package.json file to also build the server.
+First, install `@vonojs/vono` and add the plugin to your Vite config. Then create a [Hono](https://hono.dev) app in `server/index.{js/ts/jsx/tsx}` and you're done!
 
 #### Create a Hono app
 
@@ -18,11 +18,6 @@ const app = new Hono()
 export default app
 ```
 It's crucial to export your Hono app as a default export.
-
-#### Update your build script
-
-You'll need to append `vite build --ssr` to your package.json's build script.
-It should look like `vite build && vite build --ssr`.
 
 #### Add types (optional)
 
@@ -52,6 +47,18 @@ Hono comes with a built-in [RPC client](https://hono.dev/guides/rpc) that provid
 
 To use, simply `import rpc from "#vono/rpc";` and follow the [Hono docs](https://hono.dev/guides/rpc).
 
+#### createRPC()
+
+You might want to pass headers to your RPC client on the client or server. You can use the createRPC function to create a client with custom headers.
+
+```typescript
+import { createRPC } from "#vono/rpc"
+
+const rpc = createRPC({
+  x-custom-header: "Hono and Vite Rock!"
+})
+```
+
 ### Manifest
 
 Vite generates a build manifest that contains a list of each entry point and the assets each entry point imports, including dynamic imports, CSS, and other assets. This is useful for server rendering as you need a way to import an entry point's build output in a server app, as well as it's css and other imports. 
@@ -59,6 +66,29 @@ Vite generates a build manifest that contains a list of each entry point and the
 To use, simply `import manifest from "#vono/manifest";` and follow the [Vite docs](https://vitejs.dev/guide/backend-integration.html#backend-integration).
 
 In development a full list of assets cannot be generated because Vite does not bundle and thus does not walk the import graph. Because of this, only entry files are provided in the manifest during development but this should be enough to run your app.
+
+# Prerendering
+
+Vono comes with support for prerendering (SSG) out of the box. 
+
+```typescript
+---
+title: vite.config.ts
+---
+import { defineConfig } from "vite"
+import vono from "@vonojs/vono"
+
+export default defineConfig({
+  plugins: [vono({ 
+    prerender: {
+      routes: () => ["/", "/about"]
+    }
+   })]
+})
+
+#### Warning
+
+Vono prerenders in Node, which means if your Hono server isn't compatable with Node (for example, relies on Cloudflare specific features) then it may not work. You can use the `onBuild` Vono option to spawn your own process that could use Wrangler or whatever platform-specific CLI you need to prerender pages.
 
 # Deployment
 
@@ -92,8 +122,6 @@ export default defineConfig({
   plugins: [vono({ adaptors: cloudflare() })]
 })
 ```
-
-Don't forget to append `vite build --ssr` to your package.json build script in order to build the server as well.
 
 Each adaptor generates a slightly different output compatable with the hosting provider. If you want more control over the output you can either [extend an existing adaptor](#custom-adapters) or create your own Vite plugin that runs after build and transforms the build directory.
 
@@ -159,11 +187,9 @@ The entry can export a `prerenderHandler` which is used by Vono to prerender rou
 You can extend an adaptor in the following way:
 
 ```typescript
-const myCloudflareAdaptor = {
-  ...cloudflare(),
-  onBuild: async () => {
-    await cloudflare().onBuild();
-    // custom code here
-  }
-}
+import { extendAdaptor, cloudflare } from "@vonojs/vono/adaptors"
+
+const myCloudflareAdaptor = extendAdaptor(cloudflare, {
+  onBuild: () => console.log("Buildin!")
+})
 ```
