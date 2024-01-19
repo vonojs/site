@@ -1,4 +1,0 @@
----
-title: Adaptors
-slug: adaptors
----

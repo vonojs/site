@@ -10,7 +10,7 @@ export const Navigation = () => (
 		px-4
 		flex
 		items-center
-		justify-center
+		justify-between
 		overflow-clip
 		text-vite-100
 		dark:text-vite-50
@@ -24,36 +24,21 @@ export const Navigation = () => (
 			</DisplayText>
 		</a>
 
-		<div absolute inset-0 flex items-center justify-between py-2 px-4>
-			<div>
-				<Search absolute top="1/2" translate-y="-1/2" left-6 />
-				<input
-					peer
-					w-full
-					max-w-200px
-					bg-vite="200/20"
-					dark:bg-vite="600/20"
-					border
-					border-vite-600
-					dark:border-vite-400
-					rounded-full
-					p-1
-					px-2
-					pl-8
-					opacity-20
-					hover:opacity-50
-					transition
-					focus:opacity-100
-					outline-none
-				/>
-			</div>
+		<div flex items-center justify-between py-2 px-4>
 			<ul flex items-center space-x-4 font-sans>
 				<li>
 					<a
-						hover:text-vite-200
-						active:text-vite-300
+						hover:text-vite-900
+						active:text-vite-950
+						dark="hover:text-vite-100 active:text-vite-50 from-transparent to-transparent"
+						bg-gradient-linear
+						from-pink-300
+						to-hono-400
 						transition
 						duration-150
+						rounded-md
+						px-3
+						py-1
 						href="/docs"
 					>
 						docs
@@ -80,26 +65,6 @@ export const Navigation = () => (
 			dark:bg-vite="600/30"
 		/>
 	</header>
-);
-
-const Search = (props: any) => (
-	<figure {...props}>
-		<svg
-			width="24px"
-			height="24px"
-			viewBox="0 0 24 24"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-		>
-			<path
-				d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z"
-				class="stroke-vite-800 dark:stroke-vite-300"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-			/>
-		</svg>
-	</figure>
 );
 
 const Github = () => (

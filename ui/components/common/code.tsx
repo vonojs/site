@@ -1,9 +1,24 @@
 import hljs from "highlight.js";
 
-export function Code(props: { children: string, title?: string }) {
+export function Code(props: { children: string; title?: string }) {
 	const code = hljs.highlight(props.children, {
 		language: "typescript",
 	}).value;
+	if (!props.children.includes("\n"))
+		return (
+			<code
+				font-code
+				rounded-md
+				bg-vite-200
+				dark:bg-vite-900
+				border
+				border-vite-300
+				dark:border-vite-800
+				text-inherit
+			>
+				{props.children}
+			</code>
+		);
 	return (
 		<div
 			max-w-2xl

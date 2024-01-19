@@ -5,7 +5,7 @@ import { Code } from "../components/common/code";
 export const Home = () => (
 	<>
 		<Hero />
-		<Overview />
+		{/* <Overview /> */}
 		<MakeItFullStack />
 		<Hono />
 		<BuildYourOwn />
@@ -79,20 +79,35 @@ export default defineConfig({
 })`;
 
 const step2code = `import { Hono } from 'Hono'
+import db from './db'
 
 const app = new Hono()
 			
-app.get('/', c => c.text('Hello World!'))
+app.get('/', async c => {
+  const todoList = await db.todos.list()
+  return c.json(todoList) 
+})
 
 export default app`;
 
-const step3code = `import rpc from '#vono/rpc'
+const step3code = `import { useQuery } from '@tanstack/react-query'
+import rpc from '#vono/rpc'
 
-document.getElementById('ping-btn')
-.addEventListener('click', async () => {
-	const res = await rpc.ping.$get().then(res => res.text())
-	console.log(res)
-})`;
+export default function TodoList() {
+
+  const data = useQuery({
+    queryKey: ['todos'],
+    queryFn: rpc.todos.list.$get,
+  })
+
+  return (
+    <ul>
+      {data.map(todo => (
+        <li>{todo.title}</li>
+      ))}
+    </ul>
+  )
+}`
 
 const Overview = () => (
 	<section space-y-16 p-4>
@@ -119,9 +134,9 @@ const Overview = () => (
 				Step 3
 			</h2>
 			<p text-center text-vite-500 dark:text-vite-300>
-				use Hono anywhere
+				You're full stack now
 			</p>
-			<Code title=".src/App.tsx">{step3code}</Code>
+			<Code title=".src/todo-list.tsx">{step3code}</Code>
 		</div>
 		{/* <p text-vite-700 dark:text-vite-100 text-center max-w-3xl mx-auto text-2xl>
 			Vono lets you drop in a Hono server to any Vite app and deploy to
@@ -160,11 +175,12 @@ const Hono = () => (
 		border-t-hono-300
 		border-b-hono-600
 		shadow-lg
-		shadow-hono-800
+		shadow-vite-300
+		dark:shadow-hono-800
 	>
 		<div py-8 />
 		<div z-10 relative max-w-5xl mx-auto p-4 space-y-8>
-			<h2 text-3xl md="text-5xl" font-display text-hono-950 space-y-4>
+			<h2 text-3xl md="text-5xl" font-display dark:text-hono-950 text-hono-800 space-y-4>
 				<span inline-block>Hono: </span>
 				<span inline-block>Fast,</span>
 				<span inline-block>Lightweight,</span>
@@ -262,9 +278,10 @@ const MakeItFullStack = () => (
 				Make it{" "}
 				<span
 					bg-gradient-linear
-					from-vite-200
+					from-pink-300
+					dark:from-vite-200
 					shape-br
-					to-hono-400
+				to-hono-400
 					bg-clip-text
 					text-transparent
 				>
@@ -300,12 +317,35 @@ const BuildYourOwn = () => (
 		<div py-8 />
 		<div max-w-5xl mx-auto>
 			<h2 text-5xl font-display text-vite-300 text-center>
-				Build your own focused framework
+				Build your own<br />
+				<span
+					bg-gradient-linear
+					from-pink-300
+					dark:from-vite-200
+					shape-br
+				to-hono-400
+					bg-clip-text
+					text-transparent
+					pt-4
+					inline-block
+				>
+				 Framework
+				</span>
 			</h2>
-			<p text-lg text-center text-vite-500 dark:text-vite-300>
-				Build just what you need, without the complexity.
+			<p
+				text-2xl
+				text-center
+				text-vite-500
+				dark:text-vite-300
+				max-w-2xl
+				mx-auto
+				mt-8
+			>
+				Using Hono as the back-end, Vono provides a base for building your own custom framework with the features you need and nothing more.
 			</p>
-			<div grid></div>
+			<div grid lg:grid-cols-2 gap-4>
+				
+			</div>
 		</div>
 		<div p-8 />
 	</section>

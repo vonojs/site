@@ -1,7 +1,6 @@
 import { Hono } from "hono";
 import manifest from "#vono/manifest";
 import { getDocument, getMeta, search } from "./documentation";
-
 const app = new Hono()
 	.get("/ping", (c) => c.html("pong"))
 

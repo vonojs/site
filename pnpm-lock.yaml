@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@gaiiaa/content':
-    specifier: ^0.1.4
-    version: 0.1.4(vite@5.0.11)
+    specifier: ^0.1.6
+    version: 0.1.6(vite@5.0.11)
   '@hotwired/turbo':
     specifier: 8.0.0-beta.2
     version: 8.0.0-beta.2
@@ -542,8 +542,8 @@ packages:
     resolution: {integrity: sha512-i/kqajjKqsSjRtAxf8NGOidKa2lUD1JG5at7M8HD5x2tK3yceiDTa51LTS2fL1MThB5IV/p3XU8zoOGsTfK7eg==}
     dev: false
 
-  /@gaiiaa/content@0.1.4(vite@5.0.11):
-    resolution: {integrity: sha512-wkWW6wzqVh+4x6tEpqE49w8PUAZx8rA3dZrUPWchyQiRNJX6l7Q/UaaF9xIzDWRWQge9iRe/b1jgmvupVP0QqQ==}
+  /@gaiiaa/content@0.1.6(vite@5.0.11):
+    resolution: {integrity: sha512-ri/8MDpBvviH7hBTUaJV64TuE8XIMIqypULFv9FZcaWwIxkMTm3bYK8G8K+9V074qQTeS2IErj+6PUsSLjYiqg==}
     peerDependencies:
       vite: ^5.0.11
     dependencies:

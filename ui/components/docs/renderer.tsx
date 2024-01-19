@@ -1,6 +1,7 @@
 import * as jsx from "hono/jsx/jsx-runtime";
 import { toJSX } from "@gaiiaa/content";
 import * as headers from "./headers";
+import * as lists from "./lists";
 import { P } from "./text";
 import { Code } from "../common/code";
 
@@ -20,6 +21,9 @@ export const Renderer = (props: { content: object }) => {
 			h5: headers.H5,
 			p: P,
 			code: Code,
+			ul: lists.UnorderedList,
+			ol: lists.OrderedList,
+			li: lists.ListItem,
 		}
 	);
 };
