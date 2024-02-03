@@ -1,9 +1,9 @@
-import * as jsx from "hono/jsx/jsx-runtime";
-import { toJSX } from "@gaiiaa/content";
+import * as jsx from "preact/jsx-runtime";
+import { toJSX } from "@gaiiaa/content/jsx";
 import * as headers from "./headers";
 import * as lists from "./lists";
 import { P } from "./text";
-import { Code } from "../common/code";
+import { Code } from "./code";
 
 export const Renderer = (props: { content: object }) => {
 	return toJSX(

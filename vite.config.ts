@@ -3,9 +3,11 @@ import { defineConfig } from "vite";
 import { cloudflare } from "@vonojs/vono/adapters";
 import content from "@gaiiaa/content";
 import uno from "unocss/vite";
+import preact from "@preact/preset-vite";
 
 export default defineConfig({
 	plugins: [
+		preact(),
 		uno(),
 		content(),
 		vono({
@@ -16,11 +18,8 @@ export default defineConfig({
 				routes: [
 					"/",
 					"/docs",
-					"/docs/quickstart",
-					"/docs/philosophy",
-					"/docs/adaptors",
-					"/docs/manifest",
-					"/docs/rpc",
+					"/philosophy",
+					"/quickstart"
 				],
 			},
 		}),
@@ -28,8 +27,8 @@ export default defineConfig({
 	build: {
 		rollupOptions: {
 			input: "ui/client.entry.tsx",
-			external: ["node:url"]
+			external: ["node:url"],
 		},
-		assetsInlineLimit: 24000,
+		// assetsInlineLimit: 24000,
 	},
 });

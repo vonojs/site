@@ -12,8 +12,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "jsxImportSource": "hono/jsx",
+		"jsx": "react-jsx",
+		"jsxImportSource": "preact",
 
     /* Linting */
     "strict": true,

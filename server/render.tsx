@@ -1,12 +1,13 @@
 import manifest from "#vono/manifest";
-import App from "../ui/server.entry.tsx";
+import Shell from "../ui/shell.tsx";
 import { type Context } from "hono";
-import { RequestContext } from "hono/jsx-renderer";
+import { renderToString } from "preact-render-to-string";
 
-export default function render(c: Context, searchResults?: any[]) {
+export default function render(c: Context) {
 	return (
-		<RequestContext.Provider value={c}>
-			<App
+		"<!DOCTYPE html>" +
+		renderToString(
+			<Shell
 				head={
 					<>
 						<title>Vono</title>
@@ -16,10 +17,14 @@ export default function render(c: Context, searchResults?: any[]) {
 							))}
 					</>
 				}
+				path={c.req.path}
 				scripts={
-					<script type="module" src={"/" + manifest["ui/client.entry.tsx"].file} />
+					<script
+						type="module"
+						src={"/" + manifest["ui/client.entry.tsx"].file}
+					/>
 				}
 			/>
-		</RequestContext.Provider>
+		)
 	);
 }

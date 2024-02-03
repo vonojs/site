@@ -2,7 +2,7 @@
 
 Hello friend! Welcome to the Vono docs. I promise using Vono is about the simplest thing you'll ever do in todays world of web development.
 
-First, install `@vonojs/vono` and add the plugin to your Vite config. Then create a [Hono](https://hono.dev) app in `server/index.{js/ts/jsx/tsx}` and you're done!
+First, install `@vonojs/vono` and `hono` and add the plugin to your Vite config. Then create a [Hono](https://hono.dev) app in `server/index.{js/ts/jsx/tsx}` and you're done!
 
 #### Create a Hono app
 
@@ -21,7 +21,7 @@ It's crucial to export your Hono app as a default export.
 
 #### Add types (optional)
 
-Add `/// <reference types=".vono" /> ` to your vite-env.d.ts file (or any d.ts file).
+Add `/// <reference types=".vono" />` to your vite-env.d.ts file (or any d.ts file).
 
 # What is Vono?
 
