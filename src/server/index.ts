@@ -2,7 +2,7 @@
 
 import { Hono } from "hono";
 import shell from "#vono/html";
-import type { PageMeta } from "../client/lib/pages.ts";
+import type { PageMeta } from "../client/lib/router.ts";
 import { makeAppStore } from "../client/lib/state.ts";
 
 let app = new Hono();
