@@ -20,6 +20,7 @@ import {
 import { useState } from "react";
 import { State } from "../lib/state";
 import Link from "./link";
+import createFuzzySearch, { FuzzyResult } from '@nozbe/microfuzz'
 
 export let Nav = () => {
 	return (
@@ -247,17 +248,40 @@ let Theme = () => {
 	);
 };
 
+let searchList = Object.entries(
+	import.meta.glob<any>("../../../pages/**/*.mdx", { eager: true }),
+).reduce(
+	(acc, [path, doc]) => {
+		path = path.replace("../../../pages", "").replace(".mdx", "");
+		acc.push({
+			path,
+			keywords: [
+				...(doc.keywords ?? []),
+				...(doc.meta?.title ? [doc.meta.title] : []),
+			],
+		})
+		return acc;
+	},
+	[] as Array<{ path: string, keywords: string[] }>,
+);
+
+console.log(searchList);
+
+let fuzzySearch = createFuzzySearch(searchList, {
+	getText: (item) => [...item.keywords]
+})
+
 let SearchButton = (props: { text?: boolean }) => {
-	let [results, setResults] = useState([]);
+	let [results, setResults] = useState<Array<FuzzyResult<any>>>([]);
 
 	let empty = results.length < 1;
 
 	let onSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		// do a search
+		setResults(fuzzySearch(e.target.value).sort((a, b) => a.score > b.score));
 	};
 
 	return (
-		<Dialog.Root>
+		<Dialog.Root onOpenChange={x => !x && setResults([])}>
 			<Dialog.Trigger asChild>
 				<Button {...props} className="flex items-center space-x-1 h-[1.5lh]">
 					<Search size={"16px"} className="opacity-50" />
@@ -274,6 +298,20 @@ let SearchButton = (props: { text?: boolean }) => {
 					placeholder={"enter a query"}
 				/>
 				<Box>{empty && <Text>no results</Text>}</Box>
+				<Box as={"ul"}>
+					{results.map(x => (
+						<Box as={"li"} key={x.item}>
+							<Dialog.Close asChild>
+								<Link
+									href={x.item.path}
+									className={"flex items-center gap-2"}
+								>
+									<Text>{x.item.path}</Text>
+								</Link>
+							</Dialog.Close>
+						</Box>
+					))}
+				</Box>
 			</Dialog.Content>
 		</Dialog.Root>
 	);

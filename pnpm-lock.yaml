@@ -20,6 +20,9 @@ importers:
       '@mdx-js/rollup':
         specifier: ^3.1.0
         version: 3.1.0(acorn@8.14.0)(rollup@4.40.0)
+      '@nozbe/microfuzz':
+        specifier: ^1.0.0
+        version: 1.0.0
       '@reduxjs/toolkit':
         specifier: ^2.7.0
         version: 2.7.0(react-redux@9.2.0(@types/react@19.1.1)(react@19.1.0)(redux@5.0.1))(react@19.1.0)
@@ -709,6 +712,9 @@ packages:
     resolution: {integrity: sha512-q4xOtUXpCzeouE8GaJ8StT4rDxm/U5j6lkMHL2srb2Q3Y7cobE0aXyPzXVVlbeIMBi+5R5MpbiaVE5/vJUdnHg==}
     peerDependencies:
       rollup: '>=2'
+
+  '@nozbe/microfuzz@1.0.0':
+    resolution: {integrity: sha512-XKIg/guk+s1tkPTkHch9hfGOWgsKojT7BqSQddXTppOfVr3SWQhhTCqbgQaPTbppf9gc2kFeG0gpBZZ612UXHA==}
 
   '@radix-ui/number@1.1.1':
     resolution: {integrity: sha512-MkKCwxlXTgz6CFoJx3pCwn07GKp36+aZyu/u2Ln2VrA5DcdyCZkASEDBTd8x5whTQQL5CiYf4prXKLcgQdv29g==}
@@ -3052,6 +3058,8 @@ snapshots:
     transitivePeerDependencies:
       - acorn
       - supports-color
+
+  '@nozbe/microfuzz@1.0.0': {}
 
   '@radix-ui/number@1.1.1': {}
 
