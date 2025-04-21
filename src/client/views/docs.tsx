@@ -81,7 +81,7 @@ let Aside = (props: { section: string }) => {
 					<summary>Intro</summary>
 					<UnorderedList marker={"open tree"}>
 						<ListItem>
-							<Link to={"/"}>index</Link>
+							<Link to={""}>index</Link>
 						</ListItem>
 						<ListItem>
 							<Link to={"/installation"}>installation</Link>
