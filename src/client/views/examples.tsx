@@ -1,4 +1,4 @@
-import { Box, Heading, ToggleGroup } from "@100x/webtui-react";
+import { Box, Heading, Text, ToggleGroup } from "@100x/webtui-react";
 import { useState } from "react";
 import { Link, Route, Switch, useRoute } from "wouter";
 
@@ -32,7 +32,6 @@ let Header = () => {
 
 let SimpleExample = () => (
 	<>
-		<title>vono.js | examples - simple</title>
 		<iframe
 			key={"simples"}
 			style={{
@@ -44,12 +43,12 @@ let SimpleExample = () => (
 			}}
 			src="https://codesandbox.io/p/sandbox/react-new?file=/src/index.js"
 		/>
+		<Text>loading...</Text>
 	</>
 );
 
 let ComplexExample = () => (
 	<>
-		<title>vono.js | examples - complex</title>
 		<iframe
 			key={"complex"}
 			style={{
@@ -61,6 +60,7 @@ let ComplexExample = () => (
 			}}
 			src="https://codesandbox.io/p/sandbox/react-new?file=/src/index.js"
 		/>
+		<Text>loading...</Text>
 	</>
 );
 

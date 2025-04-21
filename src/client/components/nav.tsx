@@ -107,9 +107,7 @@ export let Nav = () => {
 					</Tooltip>
 				</Box>
 				<Box as={"li"}>
-					<Tooltip content={"search the documentation"}>
-						<SearchButton text />
-					</Tooltip>
+					<SearchButton text />
 				</Box>
 			</Box>
 			<Box
@@ -282,12 +280,14 @@ let SearchButton = (props: { text?: boolean }) => {
 
 	return (
 		<Dialog.Root onOpenChange={x => !x && setResults([])}>
-			<Dialog.Trigger asChild>
-				<Button {...props} className="flex items-center space-x-1 h-[1.5lh]">
-					<Search size={"16px"} className="opacity-50" />
-					{props.text && <span>Search</span>}
-				</Button>
-			</Dialog.Trigger>
+			<Tooltip content={"search the docs"}>
+				<Dialog.Trigger asChild>
+					<Button {...props} className="flex items-center space-x-1 h-[1.5lh]">
+						<Search size={"16px"} className="opacity-50" />
+						{props.text && <span>Search</span>}
+					</Button>
+				</Dialog.Trigger>
+			</Tooltip>
 			<Dialog.Content
 				title={"search docs"}
 				description={"search the documentation"}
