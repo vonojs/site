@@ -41,7 +41,7 @@ export let Nav = () => {
 				}}
 			>
 				<Box as={Link} href="/">
-					<span>WebTUI Docs</span>
+					<span>vono.js</span>
 				</Box>
 				<Theme />
 			</Box>

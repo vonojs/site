@@ -6,7 +6,8 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build --app",
-		"lint": "biome check --fix"
+		"lint": "biome check --fix",
+		"launch": "pnpm build && wrangler deploy"
 	},
 	"dependencies": {
 		"@100x/webtui-react": "^0.0.6",
