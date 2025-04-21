@@ -1,0 +1,241 @@
+@layer base {
+    [data-webtui-theme="oxocarbon-dark"] {
+        /* Oxocarbon Dark Base Colors */
+        --oxocarbon-base00: #161616; /* Background */
+        --oxocarbon-base01: #262626; /* Slightly lighter background (blend with white 0.085) */
+        --oxocarbon-base02: #393939; /* Lighter background (blend with white 0.18) */
+        --oxocarbon-base03: #525252; /* Comments, invisibles (blend with white 0.3) */
+        --oxocarbon-base04: #d0d0d0; /* Light foreground (blend with white 0.82) */
+        --oxocarbon-base05: #f2f2f2; /* Default foreground (blend with white 0.95) */
+        --oxocarbon-base06: #ffffff; /* Light background */
+
+        /* Oxocarbon Accent Colors */
+        --oxocarbon-base07: #08bdba; /* Teal */
+        --oxocarbon-base08: #3ddbd9; /* Cyan */
+        --oxocarbon-base09: #78a9ff; /* Blue */
+        --oxocarbon-base10: #ee5396; /* Pink */
+        --oxocarbon-base11: #33b1ff; /* Sky blue */
+        --oxocarbon-base12: #ff7eb6; /* Light pink */
+        --oxocarbon-base13: #42be65; /* Green */
+        --oxocarbon-base14: #be95ff; /* Purple */
+        --oxocarbon-base15: #82cfff; /* Light blue */
+
+        /* Blend color for floating elements */
+        --oxocarbon-blend: #131313;
+
+        /* Background/Foreground Mapping */
+        --background0: var(--oxocarbon-base00);
+        --background1: var(--oxocarbon-base01);
+        --background2: var(--oxocarbon-base02);
+        --background3: var(--oxocarbon-base03);
+
+        --foreground0: var(--oxocarbon-base06);
+        --foreground1: var(--oxocarbon-base05);
+        --foreground2: var(--oxocarbon-base04);
+    }
+}
+
+@layer components {
+    [data-webtui-theme="oxocarbon-dark"] {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--oxocarbon-base10);
+        }
+
+        p,
+        blockquote,
+        li,
+        [is-~="typography-block"] {
+            a {
+                color: var(--oxocarbon-base09);
+                text-decoration: underline;
+
+                &:hover {
+                    color: var(--oxocarbon-base11);
+                }
+            }
+
+            code {
+                color: var(--oxocarbon-base12);
+            }
+        }
+    }
+
+    [data-webtui-theme="oxocarbon-dark"] {
+        button {
+            /* Dark background variants */
+            &[variant-="base00"] {
+                --button-primary: var(--oxocarbon-base00);
+                --button-secondary: var(--foreground0);
+            }
+
+            &[variant-="base01"] {
+                --button-primary: var(--oxocarbon-base01);
+                --button-secondary: var(--foreground0);
+            }
+
+            &[variant-="base02"] {
+                --button-primary: var(--oxocarbon-base02);
+                --button-secondary: var(--foreground0);
+            }
+
+            &[variant-="base03"] {
+                --button-primary: var(--oxocarbon-base03);
+                --button-secondary: var(--foreground0);
+            }
+
+            /* Light foreground variants */
+            &[variant-="base04"] {
+                --button-primary: var(--oxocarbon-base04);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="base05"] {
+                --button-primary: var(--oxocarbon-base05);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="base06"] {
+                --button-primary: var(--oxocarbon-base06);
+                --button-secondary: var(--background0);
+            }
+
+            /* Accent colors */
+            &[variant-="teal"] {
+                --button-primary: var(--oxocarbon-base07);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="cyan"] {
+                --button-primary: var(--oxocarbon-base08);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="blue"] {
+                --button-primary: var(--oxocarbon-base09);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="pink"] {
+                --button-primary: var(--oxocarbon-base10);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="sky"] {
+                --button-primary: var(--oxocarbon-base11);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="light-pink"] {
+                --button-primary: var(--oxocarbon-base12);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="green"] {
+                --button-primary: var(--oxocarbon-base13);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="purple"] {
+                --button-primary: var(--oxocarbon-base14);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="light-blue"] {
+                --button-primary: var(--oxocarbon-base15);
+                --button-secondary: var(--background0);
+            }
+        }
+    }
+
+    [data-webtui-theme="oxocarbon-dark"] {
+        [is-~="badge"] {
+            /* Dark background variants */
+            &[variant-="base00"] {
+                --badge-color: var(--oxocarbon-base00);
+                --badge-text: var(--foreground0);
+            }
+
+            &[variant-="base01"] {
+                --badge-color: var(--oxocarbon-base01);
+                --badge-text: var(--foreground0);
+            }
+
+            &[variant-="base02"] {
+                --badge-color: var(--oxocarbon-base02);
+                --badge-text: var(--foreground0);
+            }
+
+            &[variant-="base03"] {
+                --badge-color: var(--oxocarbon-base03);
+                --badge-text: var(--foreground0);
+            }
+
+            /* Light foreground variants */
+            &[variant-="base04"] {
+                --badge-color: var(--oxocarbon-base04);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="base05"] {
+                --badge-color: var(--oxocarbon-base05);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="base06"] {
+                --badge-color: var(--oxocarbon-base06);
+                --badge-text: var(--background0);
+            }
+
+            /* Accent colors */
+            &[variant-="teal"] {
+                --badge-color: var(--oxocarbon-base07);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="cyan"] {
+                --badge-color: var(--oxocarbon-base08);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="blue"] {
+                --badge-color: var(--oxocarbon-base09);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="pink"] {
+                --badge-color: var(--oxocarbon-base10);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="sky"] {
+                --badge-color: var(--oxocarbon-base11);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="light-pink"] {
+                --badge-color: var(--oxocarbon-base12);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="green"] {
+                --badge-color: var(--oxocarbon-base13);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="purple"] {
+                --badge-color: var(--oxocarbon-base14);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="light-blue"] {
+                --badge-color: var(--oxocarbon-base15);
+                --badge-text: var(--background0);
+            }
+        }
+    }
+}

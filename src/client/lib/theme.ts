@@ -21,6 +21,10 @@ let themeValues = {
 	rosePine: {
 		light: "rosepine-light",
 		dark: "rosepine-dark",
+	},
+	oxocarbon: {
+		light: "oxocarbon-light",
+		dark: "oxocarbon-dark",
 	}
 };
 

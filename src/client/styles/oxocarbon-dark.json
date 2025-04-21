@@ -1,0 +1,20 @@
+{
+  "name": "Oxocarbon Dark",
+  "type": "dark",
+  "colors": {
+    "editor.background": "#161616",
+    "editor.foreground": "#f2f4f8"
+  },
+  "tokenColors": [
+    { "scope": ["comment", "punctuation.definition.comment"], "settings": { "foreground": "#525252" } },
+    { "scope": ["string", "constant.other.symbol"], "settings": { "foreground": "#3ddbd9" } },
+    { "scope": ["constant.numeric", "constant.language"], "settings": { "foreground": "#78a9ff" } },
+    { "scope": ["variable", "meta.definition.variable"], "settings": { "foreground": "#08bdba" } },
+    { "scope": ["keyword", "storage"], "settings": { "foreground": "#ee5396" } },
+    { "scope": ["entity.name.function", "support.function"], "settings": { "foreground": "#33b1ff" } },
+    { "scope": ["entity.name.type", "support.type"], "settings": { "foreground": "#ff7eb6" } },
+    { "scope": ["entity.name.class", "meta.class"], "settings": { "foreground": "#42be65" } },
+    { "scope": ["constant", "variable.language"], "settings": { "foreground": "#be95ff" } },
+    { "scope": ["invalid", "invalid.deprecated"], "settings": { "foreground": "#82cfff" } }
+  ]
+}

@@ -4,6 +4,9 @@ import react from "@vitejs/plugin-react-swc";
 import { CloudflareAdaptor, vono } from "@vonojs/vite";
 import { defineConfig } from "vite";
 import rehypeShiki from "@shikijs/rehype";
+import oxocarbonDark from './src/client/styles/oxocarbon-dark.json';
+import oxocarbonLight from './src/client/styles/oxocarbon-light.json';
+
 
 export default defineConfig({
 	plugins: [
@@ -28,6 +31,8 @@ export default defineConfig({
 						"dark": "min-dark",
 						"rosepine-light": "rose-pine-dawn",
 						"rosepine-dark": "rose-pine",
+						"oxocarbon-light": oxocarbonLight,
+						"oxocarbon-dark": oxocarbonDark,
 					},
 					defaultColor: false,
 				}],

@@ -1,0 +1,241 @@
+@layer base {
+    [data-webtui-theme="oxocarbon-light"] {
+        /* Oxocarbon Light Base Colors */
+        --oxocarbon-base00: #ffffff; /* Background (inverted from dark theme) */
+        --oxocarbon-base01: #f2f2f2; /* Slightly darker background (blend with black 0.95) */
+        --oxocarbon-base02: #d0d0d0; /* Darker background (blend with black 0.82) */
+        --oxocarbon-base03: #161616; /* Default dark foreground */
+        --oxocarbon-base04: #37474F; /* Medium tone */
+        --oxocarbon-base05: #90A4AE; /* Muted foreground */
+        --oxocarbon-base06: #525252; /* Dark foreground */
+
+        /* Oxocarbon Accent Colors */
+        --oxocarbon-base07: #08bdba; /* Teal */
+        --oxocarbon-base08: #ff7eb6; /* Light pink */
+        --oxocarbon-base09: #ee5396; /* Pink */
+        --oxocarbon-base10: #FF6F00; /* Orange */
+        --oxocarbon-base11: #0f62fe; /* Blue */
+        --oxocarbon-base12: #673AB7; /* Deep purple */
+        --oxocarbon-base13: #42be65; /* Green */
+        --oxocarbon-base14: #be95ff; /* Purple */
+        --oxocarbon-base15: #FFAB91; /* Coral */
+
+        /* Blend color for floating elements */
+        --oxocarbon-blend: #FAFAFA;
+
+        /* Background/Foreground Mapping for Light Theme */
+        --background0: var(--oxocarbon-base00);
+        --background1: var(--oxocarbon-base01);
+        --background2: var(--oxocarbon-base02);
+        --background3: var(--oxocarbon-base06);
+
+        --foreground0: var(--oxocarbon-base03);
+        --foreground1: var(--oxocarbon-base04);
+        --foreground2: var(--oxocarbon-base05);
+    }
+}
+
+@layer components {
+    [data-webtui-theme="oxocarbon-light"] {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--oxocarbon-base09);
+        }
+
+        p,
+        blockquote,
+        li,
+        [is-~="typography-block"] {
+            a {
+                color: var(--oxocarbon-base11);
+                text-decoration: underline;
+
+                &:hover {
+                    color: var(--oxocarbon-base10);
+                }
+            }
+
+            code {
+                color: var(--oxocarbon-base10);
+            }
+        }
+    }
+
+    [data-webtui-theme="oxocarbon-light"] {
+        button {
+            /* Light background variants */
+            &[variant-="base00"] {
+                --button-primary: var(--oxocarbon-base00);
+                --button-secondary: var(--foreground0);
+            }
+
+            &[variant-="base01"] {
+                --button-primary: var(--oxocarbon-base01);
+                --button-secondary: var(--foreground0);
+            }
+
+            &[variant-="base02"] {
+                --button-primary: var(--oxocarbon-base02);
+                --button-secondary: var(--foreground0);
+            }
+
+            /* Dark foreground variants */
+            &[variant-="base03"] {
+                --button-primary: var(--oxocarbon-base03);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="base04"] {
+                --button-primary: var(--oxocarbon-base04);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="base05"] {
+                --button-primary: var(--oxocarbon-base05);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="base06"] {
+                --button-primary: var(--oxocarbon-base06);
+                --button-secondary: var(--background0);
+            }
+
+            /* Accent colors */
+            &[variant-="teal"] {
+                --button-primary: var(--oxocarbon-base07);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="light-pink"] {
+                --button-primary: var(--oxocarbon-base08);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="pink"] {
+                --button-primary: var(--oxocarbon-base09);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="orange"] {
+                --button-primary: var(--oxocarbon-base10);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="blue"] {
+                --button-primary: var(--oxocarbon-base11);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="deep-purple"] {
+                --button-primary: var(--oxocarbon-base12);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="green"] {
+                --button-primary: var(--oxocarbon-base13);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="purple"] {
+                --button-primary: var(--oxocarbon-base14);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="coral"] {
+                --button-primary: var(--oxocarbon-base15);
+                --button-secondary: var(--background0);
+            }
+        }
+    }
+
+    [data-webtui-theme="oxocarbon-light"] {
+        [is-~="badge"] {
+            /* Light background variants */
+            &[variant-="base00"] {
+                --badge-color: var(--oxocarbon-base00);
+                --badge-text: var(--foreground0);
+            }
+
+            &[variant-="base01"] {
+                --badge-color: var(--oxocarbon-base01);
+                --badge-text: var(--foreground0);
+            }
+
+            &[variant-="base02"] {
+                --badge-color: var(--oxocarbon-base02);
+                --badge-text: var(--foreground0);
+            }
+
+            /* Dark foreground variants */
+            &[variant-="base03"] {
+                --badge-color: var(--oxocarbon-base03);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="base04"] {
+                --badge-color: var(--oxocarbon-base04);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="base05"] {
+                --badge-color: var(--oxocarbon-base05);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="base06"] {
+                --badge-color: var(--oxocarbon-base06);
+                --badge-text: var(--background0);
+            }
+
+            /* Accent colors */
+            &[variant-="teal"] {
+                --badge-color: var(--oxocarbon-base07);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="light-pink"] {
+                --badge-color: var(--oxocarbon-base08);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="pink"] {
+                --badge-color: var(--oxocarbon-base09);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="orange"] {
+                --badge-color: var(--oxocarbon-base10);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="blue"] {
+                --badge-color: var(--oxocarbon-base11);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="deep-purple"] {
+                --badge-color: var(--oxocarbon-base12);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="green"] {
+                --badge-color: var(--oxocarbon-base13);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="purple"] {
+                --badge-color: var(--oxocarbon-base14);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="coral"] {
+                --badge-color: var(--oxocarbon-base15);
+                --badge-text: var(--background0);
+            }
+        }
+    }
+}

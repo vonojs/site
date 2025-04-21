@@ -8,6 +8,8 @@
 @import "./styles/gruvbox-light.css";
 @import "./styles/rosepine-dark.css";
 @import "./styles/rosepine-light.css";
+@import "./styles/oxocarbon-dark.css";
+@import "./styles/oxocarbon-light.css";
 
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
@@ -283,4 +285,14 @@ html[data-webtui-theme="rosepine-dark"] .shiki span {
 html[data-webtui-theme="rosepine-light"] .shiki,
 html[data-webtui-theme="rosepine-light"] .shiki span {
 	color: var(--shiki-rosepine-light) !important;
+}
+
+html[data-webtui-theme="oxocarbon-dark"] .shiki,
+html[data-webtui-theme="oxocarbon-dark"] .shiki span {
+	color: var(--shiki-oxocarbon-dark) !important;
+}
+
+html[data-webtui-theme="oxocarbon-light"] .shiki,
+html[data-webtui-theme="oxocarbon-light"] .shiki span {
+	color: var(--shiki-oxocarbon-light) !important;
 }

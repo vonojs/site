@@ -239,6 +239,7 @@ let Theme = () => {
 						<Select.Item value={"highContrast"}>Basic</Select.Item>
 						<Select.Item value={"gruvbox"}>Gruvbox</Select.Item>
 						<Select.Item value={"rosePine"}>Rose Pine</Select.Item>
+						<Select.Item value={"oxocarbon"}>Oxocarbon</Select.Item>
 					</Select.Root>
 				</Box>
 			</Popover.Content>

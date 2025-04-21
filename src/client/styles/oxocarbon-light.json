@@ -1,0 +1,20 @@
+{
+  "name": "Oxocarbon Light",
+  "type": "light",
+  "colors": {
+    "editor.background": "#f2f4f8",
+    "editor.foreground": "#393939"
+  },
+  "tokenColors": [
+    { "scope": ["comment", "punctuation.definition.comment"], "settings": { "foreground": "#525252" } },
+    { "scope": ["string", "constant.other.symbol"], "settings": { "foreground": "#ff7eb6" } },
+    { "scope": ["constant.numeric", "constant.language"], "settings": { "foreground": "#ee5396" } },
+    { "scope": ["variable", "meta.definition.variable"], "settings": { "foreground": "#08bdba" } },
+    { "scope": ["keyword", "storage"], "settings": { "foreground": "#FF6F00" } },
+    { "scope": ["entity.name.function", "support.function"], "settings": { "foreground": "#0f62fe" } },
+    { "scope": ["entity.name.type", "support.type"], "settings": { "foreground": "#673AB7" } },
+    { "scope": ["entity.name.class", "meta.class"], "settings": { "foreground": "#42be65" } },
+    { "scope": ["constant", "variable.language"], "settings": { "foreground": "#be95ff" } },
+    { "scope": ["invalid", "invalid.deprecated"], "settings": { "foreground": "#37474F" } }
+  ]
+}
