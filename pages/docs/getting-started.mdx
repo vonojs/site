@@ -3,3 +3,23 @@
 export let meta = {
     title: "Getting Started",
 }
+
+```ts
+import { defineConfig } from "vite";
+import { CloudflareAdaptor, vono } from "@vonojs/vite";
+
+export default defineConfig({
+  plugins: [
+    vono({
+      server: "src/server/index.ts",
+      adaptor: CloudflareAdaptor,
+      preserveHtml: false,
+    }),
+  ],
+  build: {
+    rollupOptions: {
+      input: "src/client/main.html",
+    },
+  },
+});
+```

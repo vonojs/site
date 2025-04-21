@@ -3,6 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react-swc";
 import { CloudflareAdaptor, vono } from "@vonojs/vite";
 import { defineConfig } from "vite";
+import rehypeShiki from "@shikijs/rehype";
 
 export default defineConfig({
 	plugins: [
@@ -14,6 +15,9 @@ export default defineConfig({
 		}),
 		mdx({
 			providerImportSource: "@mdx-js/react",
+			rehypePlugins: [
+				[rehypeShiki, { themes: { light: "catppuccin-latte", dark: "catppuccin-mocha" } }],
+			]
 		}),
 		react(),
 	],

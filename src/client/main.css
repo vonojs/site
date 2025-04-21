@@ -141,12 +141,6 @@ a {
 	background-color: #f5f5f5;
 }
 
-.typography code {
-	padding: 0.2rem 0.4rem;
-	border-radius: 3px;
-	background-color: #f5f5f5;
-}
-
 /* Inline elements */
 .typography strong,
 .typography b {
@@ -230,4 +224,18 @@ a {
 .typography * + h3,
 .typography * + h4 {
 	margin-top: 2rem;
+}
+
+pre {
+	background-color: var(--background1) !important;
+}
+
+
+html[data-webtui-theme="catppuccin-mocha"] .shiki,
+html[data-webtui-theme="catppuccin-mocha"] .shiki span {
+	color: var(--shiki-dark) !important;
+	background-color: var(--background1) !important;
+	font-style: var(--shiki-dark-font-style) !important;
+	font-weight: var(--shiki-dark-font-weight) !important;
+	text-decoration: var(--shiki-dark-text-decoration) !important;
 }
