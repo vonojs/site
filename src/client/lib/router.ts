@@ -22,8 +22,8 @@ interface RouteState {
 }
 
 let defaultMeta = {
-	title: "vono.js",
-	description: "Vono is a Vite plugin for building full stack applications.",
+	title: "Vono.js is a Vite plugin for building full stack applications.",
+	description: "Vono.js is a Vite plugin that adds a server endpoint to your client app and can deploy to cloudflare, netlify, and more."
 };
 
 export let routerSlice = (args: { path: string }) =>
@@ -65,10 +65,23 @@ let pages = Object.entries(
 
 let getPage = (path: string) => {
 	if (path in pages) {
-		return pages[path];
+		return {
+			Component: pages[path].Component,
+			meta: {
+				...defaultMeta,
+				...pages[path].meta
+			},
+		}
 	}
 	if (stripTrailingSlash(path) + "/index" in pages) {
-		return pages[stripTrailingSlash(path) + "/index"];
+		let page = pages[stripTrailingSlash(path) + "/index"];
+		return {
+			Component: page.Component,
+			meta: {
+				...defaultMeta,
+				...page.meta
+			},
+		}
 	}
 	return {
 		Component: undefined,
