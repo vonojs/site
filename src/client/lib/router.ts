@@ -22,7 +22,7 @@ interface RouteState {
 }
 
 let defaultMeta = {
-	title: "Vono.js is a Vite plugin for building full stack applications.",
+	title: "Vono.js - Build fullstack apps with Vite",
 	description: "Vono.js is a Vite plugin that adds a server endpoint to your client app and can deploy to cloudflare, netlify, and more."
 };
 
