@@ -1,0 +1,195 @@
+@layer base {
+    [data-webtui-theme="rosepine-dark"] {
+        /* Base */
+        --rose-pine-base: #191724;
+        --rose-pine-surface: #1f1d2e;
+        --rose-pine-overlay: #26233a;
+        --rose-pine-muted: #6e6a86;
+        --rose-pine-subtle: #908caa;
+
+        /* Text */
+        --rose-pine-text: #e0def4;
+        --rose-pine-love: #eb6f92;
+        --rose-pine-gold: #f6c177;
+        --rose-pine-rose: #ebbcba;
+        --rose-pine-pine: #31748f;
+        --rose-pine-foam: #9ccfd8;
+        --rose-pine-iris: #c4a7e7;
+
+        /* Backgrounds */
+        --background0: var(--rose-pine-base);
+        --background1: var(--rose-pine-surface);
+        --background2: var(--rose-pine-overlay);
+        --background3: var(--rose-pine-muted);
+
+        /* Foregrounds */
+        --foreground0: var(--rose-pine-text);
+        --foreground1: var(--rose-pine-subtle);
+        --foreground2: var(--rose-pine-muted);
+    }
+}
+
+@layer components {
+    [data-webtui-theme="rose-pine"] {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--rose-pine-rose);
+        }
+
+        p,
+        blockquote,
+        li,
+        [is-~="typography-block"] {
+            a {
+                color: var(--rose-pine-iris);
+                text-decoration: underline;
+
+                &:hover {
+                    color: var(--rose-pine-foam);
+                }
+            }
+
+            code {
+                color: var(--rose-pine-gold);
+            }
+        }
+    }
+
+    [data-webtui-theme="rose-pine"] {
+        button {
+            /* Base colors */
+            &[variant-="base"] {
+                --button-primary: var(--background0);
+                --button-secondary: var(--foreground0);
+            }
+
+            &[variant-="surface"] {
+                --button-primary: var(--background1);
+                --button-secondary: var(--foreground0);
+            }
+
+            &[variant-="overlay"] {
+                --button-primary: var(--background2);
+                --button-secondary: var(--foreground0);
+            }
+
+            &[variant-="muted"] {
+                --button-primary: var(--background3);
+                --button-secondary: var(--foreground0);
+            }
+
+            /* Text colors */
+            &[variant-="text"] {
+                --button-primary: var(--foreground0);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="subtle"] {
+                --button-primary: var(--foreground1);
+                --button-secondary: var(--background0);
+            }
+
+            /* Accent colors */
+            &[variant-="love"] {
+                --button-primary: var(--rose-pine-love);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="gold"] {
+                --button-primary: var(--rose-pine-gold);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="rose"] {
+                --button-primary: var(--rose-pine-rose);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="pine"] {
+                --button-primary: var(--rose-pine-pine);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="foam"] {
+                --button-primary: var(--rose-pine-foam);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="iris"] {
+                --button-primary: var(--rose-pine-iris);
+                --button-secondary: var(--background0);
+            }
+        }
+    }
+
+    [data-webtui-theme="rose-pine"] {
+        [is-~="badge"] {
+            /* Base colors */
+            &[variant-="base"] {
+                --badge-color: var(--background0);
+                --badge-text: var(--foreground0);
+            }
+
+            &[variant-="surface"] {
+                --badge-color: var(--background1);
+                --badge-text: var(--foreground0);
+            }
+
+            &[variant-="overlay"] {
+                --badge-color: var(--background2);
+                --badge-text: var(--foreground0);
+            }
+
+            &[variant-="muted"] {
+                --badge-color: var(--background3);
+                --badge-text: var(--foreground0);
+            }
+
+            /* Text colors */
+            &[variant-="text"] {
+                --badge-color: var(--foreground0);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="subtle"] {
+                --badge-color: var(--foreground1);
+                --badge-text: var(--background0);
+            }
+
+            /* Accent colors */
+            &[variant-="love"] {
+                --badge-color: var(--rose-pine-love);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="gold"] {
+                --badge-color: var(--rose-pine-gold);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="rose"] {
+                --badge-color: var(--rose-pine-rose);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="pine"] {
+                --badge-color: var(--rose-pine-pine);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="foam"] {
+                --badge-color: var(--rose-pine-foam);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="iris"] {
+                --badge-color: var(--rose-pine-iris);
+                --badge-text: var(--background0);
+            }
+        }
+    }
+}

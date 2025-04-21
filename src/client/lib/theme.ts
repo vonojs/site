@@ -10,6 +10,18 @@ let themeValues = {
 		light: "nord-light",
 		dark: "nord",
 	},
+	gruvbox: {
+		light: "gruvbox-light",
+		dark: "gruvbox",
+	},
+	highContrast: {
+		light: "light",
+		dark: "dark",
+	},
+	rosePine: {
+		light: "rosepine-light",
+		dark: "rosepine-dark",
+	}
 };
 
 export let mapTheme = (theme: string, mode: string) => {

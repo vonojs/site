@@ -1,0 +1,194 @@
+@layer base {
+    [data-webtui-theme="rosepine-light"] {
+        /* Base colors */
+        --rp-base: #faf4ed;
+        --rp-surface: #fffaf3;
+        --rp-overlay: #f2e9e1;
+        --rp-muted: #9893a5;
+        --rp-subtle: #797593;
+        --rp-text: #575279;
+
+        /* Accent colors */
+        --rp-love: #b4637a;
+        --rp-gold: #ea9d34;
+        --rp-rose: #d7827e;
+        --rp-pine: #286983;
+        --rp-foam: #56949f;
+        --rp-iris: #907aa9;
+
+        /* Hierarchy colors */
+        --background0: var(--rp-base);
+        --background1: var(--rp-surface);
+        --background2: var(--rp-overlay);
+        --background3: var(--rp-muted);
+
+        --foreground0: var(--rp-text);
+        --foreground1: var(--rp-subtle);
+        --foreground2: var(--rp-muted);
+    }
+}
+
+@layer components {
+    [data-webtui-theme="rosepine-light"] {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--rp-pine);
+        }
+
+        p,
+        blockquote,
+        li,
+        [is-~="typography-block"] {
+            a {
+                color: var(--rp-iris);
+                text-decoration: underline;
+
+                &:hover {
+                    color: var(--rp-rose);
+                }
+            }
+
+            code {
+                color: var(--rp-gold);
+            }
+        }
+    }
+
+    [data-webtui-theme="rosepine-light"] {
+        button {
+            /* Background variants */
+            &[variant-="base"] {
+                --button-primary: var(--rp-base);
+                --button-secondary: var(--rp-text);
+            }
+
+            &[variant-="surface"] {
+                --button-primary: var(--rp-surface);
+                --button-secondary: var(--rp-text);
+            }
+
+            &[variant-="overlay"] {
+                --button-primary: var(--rp-overlay);
+                --button-secondary: var(--rp-text);
+            }
+
+            &[variant-="muted"] {
+                --button-primary: var(--rp-muted);
+                --button-secondary: var(--rp-base);
+            }
+
+            /* Foreground variants */
+            &[variant-="text"] {
+                --button-primary: var(--rp-text);
+                --button-secondary: var(--rp-base);
+            }
+
+            &[variant-="subtle"] {
+                --button-primary: var(--rp-subtle);
+                --button-secondary: var(--rp-base);
+            }
+
+            /* Accent colors */
+            &[variant-="love"] {
+                --button-primary: var(--rp-love);
+                --button-secondary: var(--rp-base);
+            }
+
+            &[variant-="gold"] {
+                --button-primary: var(--rp-gold);
+                --button-secondary: var(--rp-base);
+            }
+
+            &[variant-="rose"] {
+                --button-primary: var(--rp-rose);
+                --button-secondary: var(--rp-base);
+            }
+
+            &[variant-="pine"] {
+                --button-primary: var(--rp-pine);
+                --button-secondary: var(--rp-base);
+            }
+
+            &[variant-="foam"] {
+                --button-primary: var(--rp-foam);
+                --button-secondary: var(--rp-base);
+            }
+
+            &[variant-="iris"] {
+                --button-primary: var(--rp-iris);
+                --button-secondary: var(--rp-base);
+            }
+        }
+    }
+
+    [data-webtui-theme="rosepine-light"] {
+        [is-~="badge"] {
+            /* Background variants */
+            &[variant-="base"] {
+                --badge-color: var(--rp-base);
+                --badge-text: var(--rp-text);
+            }
+
+            &[variant-="surface"] {
+                --badge-color: var(--rp-surface);
+                --badge-text: var(--rp-text);
+            }
+
+            &[variant-="overlay"] {
+                --badge-color: var(--rp-overlay);
+                --badge-text: var(--rp-text);
+            }
+
+            &[variant-="muted"] {
+                --badge-color: var(--rp-muted);
+                --badge-text: var(--rp-base);
+            }
+
+            /* Foreground variants */
+            &[variant-="text"] {
+                --badge-color: var(--rp-text);
+                --badge-text: var(--rp-base);
+            }
+
+            &[variant-="subtle"] {
+                --badge-color: var(--rp-subtle);
+                --badge-text: var(--rp-base);
+            }
+
+            /* Accent colors */
+            &[variant-="love"] {
+                --badge-color: var(--rp-love);
+                --badge-text: var(--rp-base);
+            }
+
+            &[variant-="gold"] {
+                --badge-color: var(--rp-gold);
+                --badge-text: var(--rp-base);
+            }
+
+            &[variant-="rose"] {
+                --badge-color: var(--rp-rose);
+                --badge-text: var(--rp-base);
+            }
+
+            &[variant-="pine"] {
+                --badge-color: var(--rp-pine);
+                --badge-text: var(--rp-base);
+            }
+
+            &[variant-="foam"] {
+                --badge-color: var(--rp-foam);
+                --badge-text: var(--rp-base);
+            }
+
+            &[variant-="iris"] {
+                --badge-color: var(--rp-iris);
+                --badge-text: var(--rp-base);
+            }
+        }
+    }
+}

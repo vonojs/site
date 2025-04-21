@@ -4,7 +4,10 @@
 
 @import "@webtui/theme-nord";
 @import "@webtui/theme-catppuccin";
-@import "@webtui/theme-gruvbox";
+@import "./styles/gruvbox-dark.css";
+@import "./styles/gruvbox-light.css";
+@import "./styles/rosepine-dark.css";
+@import "./styles/rosepine-light.css";
 
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
@@ -226,16 +229,58 @@ a {
 	margin-top: 2rem;
 }
 
-pre {
+.shiki, .shiki span {
 	background-color: var(--background1) !important;
 }
 
+html[data-webtui-theme="nord-light"] .shiki,
+html[data-webtui-theme="nord-light"] .shiki span {
+	color: var(--shiki-nord) !important;
+	background-color: var(--foreground2) !important;
+}
+
+html[data-webtui-theme="nord"] .shiki,
+html[data-webtui-theme="nord"] .shiki span {
+	color: var(--shiki-nord) !important;
+}
 
 html[data-webtui-theme="catppuccin-mocha"] .shiki,
 html[data-webtui-theme="catppuccin-mocha"] .shiki span {
+	color: var(--shiki-cat-mocha) !important;
+}
+
+html[data-webtui-theme="catppuccin-latte"] .shiki,
+html[data-webtui-theme="catppuccin-latte"] .shiki span {
+	color: var(--shiki-cat-latte) !important;
+}
+
+html[data-webtui-theme="gruvbox"] .shiki,
+html[data-webtui-theme="gruvbox"] .shiki span {
+	color: var(--shiki-gruvbox) !important;
+}
+
+html[data-webtui-theme="gruvbox-light"] .shiki,
+html[data-webtui-theme="gruvbox-light"] .shiki span {
+	color: var(--shiki-gruvbox-light) !important;
+}
+
+
+html[data-webtui-theme="light"] .shiki,
+html[data-webtui-theme="light"] .shiki span {
+	color: var(--shiki-light) !important;
+}
+
+html[data-webtui-theme="dark"] .shiki,
+html[data-webtui-theme="dark"] .shiki span {
 	color: var(--shiki-dark) !important;
-	background-color: var(--background1) !important;
-	font-style: var(--shiki-dark-font-style) !important;
-	font-weight: var(--shiki-dark-font-weight) !important;
-	text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+html[data-webtui-theme="rosepine-dark"] .shiki,
+html[data-webtui-theme="rosepine-dark"] .shiki span {
+	color: var(--shiki-rosepine-dark) !important;
+}
+
+html[data-webtui-theme="rosepine-light"] .shiki,
+html[data-webtui-theme="rosepine-light"] .shiki span {
+	color: var(--shiki-rosepine-light) !important;
 }

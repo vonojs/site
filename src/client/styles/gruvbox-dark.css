@@ -1,0 +1,376 @@
+@layer base {
+    [data-webtui-theme="gruvbox"] {
+        /* Gruvbox Dark Background Colors */
+        --gruvbox-dark0-hard: #1d2021;
+        --gruvbox-dark0: #282828;
+        --gruvbox-dark0-soft: #32302f;
+        --gruvbox-dark1: #3c3836;
+        --gruvbox-dark2: #504945;
+        --gruvbox-dark3: #665c54;
+        --gruvbox-dark4: #7c6f64;
+
+        /* Gruvbox Light Foreground Colors */
+        --gruvbox-light0-hard: #f9f5d7;
+        --gruvbox-light0: #fbf1c7;
+        --gruvbox-light0-soft: #f2e5bc;
+        --gruvbox-light1: #ebdbb2;
+        --gruvbox-light2: #d5c4a1;
+        --gruvbox-light3: #bdae93;
+        --gruvbox-light4: #a89984;
+
+        /* Gruvbox Accent Colors */
+        --gruvbox-bright-red: #fb4934;
+        --gruvbox-bright-green: #b8bb26;
+        --gruvbox-bright-yellow: #fabd2f;
+        --gruvbox-bright-blue: #83a598;
+        --gruvbox-bright-purple: #d3869b;
+        --gruvbox-bright-aqua: #8ec07c;
+        --gruvbox-bright-orange: #fe8019;
+
+        /* Gruvbox Muted Colors */
+        --gruvbox-neutral-red: #cc241d;
+        --gruvbox-neutral-green: #98971a;
+        --gruvbox-neutral-yellow: #d79921;
+        --gruvbox-neutral-blue: #458588;
+        --gruvbox-neutral-purple: #b16286;
+        --gruvbox-neutral-aqua: #689d6a;
+        --gruvbox-neutral-orange: #d65d0e;
+
+        /* Background/Foreground Mapping */
+        --background0: var(--gruvbox-dark0);
+        --background1: var(--gruvbox-dark1);
+        --background2: var(--gruvbox-dark2);
+        --background3: var(--gruvbox-dark3);
+
+        --foreground0: var(--gruvbox-light0);
+        --foreground1: var(--gruvbox-light1);
+        --foreground2: var(--gruvbox-light2);
+    }
+}
+
+@layer components {
+    [data-webtui-theme="gruvbox"] {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--gruvbox-bright-green);
+        }
+
+        p,
+        blockquote,
+        li,
+        [is-~="typography-block"] {
+            a {
+                color: var(--gruvbox-bright-blue);
+                text-decoration: underline;
+
+                &:hover {
+                    color: var(--gruvbox-bright-aqua);
+                }
+            }
+
+            code {
+                color: var(--gruvbox-bright-orange);
+            }
+        }
+    }
+
+    [data-webtui-theme="gruvbox"] {
+        button {
+            /* Dark shades */
+            &[variant-="dark0-hard"] {
+                --button-primary: var(--gruvbox-dark0-hard);
+                --button-secondary: var(--foreground0);
+            }
+
+            &[variant-="dark0"] {
+                --button-primary: var(--gruvbox-dark0);
+                --button-secondary: var(--foreground0);
+            }
+
+            &[variant-="dark0-soft"] {
+                --button-primary: var(--gruvbox-dark0-soft);
+                --button-secondary: var(--foreground0);
+            }
+
+            &[variant-="dark1"] {
+                --button-primary: var(--gruvbox-dark1);
+                --button-secondary: var(--foreground0);
+            }
+
+            &[variant-="dark2"] {
+                --button-primary: var(--gruvbox-dark2);
+                --button-secondary: var(--foreground0);
+            }
+
+            &[variant-="dark3"] {
+                --button-primary: var(--gruvbox-dark3);
+                --button-secondary: var(--foreground0);
+            }
+
+            &[variant-="dark4"] {
+                --button-primary: var(--gruvbox-dark4);
+                --button-secondary: var(--foreground0);
+            }
+
+            /* Light shades */
+            &[variant-="light0-hard"] {
+                --button-primary: var(--gruvbox-light0-hard);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="light0"] {
+                --button-primary: var(--gruvbox-light0);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="light0-soft"] {
+                --button-primary: var(--gruvbox-light0-soft);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="light1"] {
+                --button-primary: var(--gruvbox-light1);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="light2"] {
+                --button-primary: var(--gruvbox-light2);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="light3"] {
+                --button-primary: var(--gruvbox-light3);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="light4"] {
+                --button-primary: var(--gruvbox-light4);
+                --button-secondary: var(--background0);
+            }
+
+            /* Bright accent colors */
+            &[variant-="bright-red"] {
+                --button-primary: var(--gruvbox-bright-red);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="bright-green"] {
+                --button-primary: var(--gruvbox-bright-green);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="bright-yellow"] {
+                --button-primary: var(--gruvbox-bright-yellow);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="bright-blue"] {
+                --button-primary: var(--gruvbox-bright-blue);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="bright-purple"] {
+                --button-primary: var(--gruvbox-bright-purple);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="bright-aqua"] {
+                --button-primary: var(--gruvbox-bright-aqua);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="bright-orange"] {
+                --button-primary: var(--gruvbox-bright-orange);
+                --button-secondary: var(--background0);
+            }
+
+            /* Neutral accent colors */
+            &[variant-="neutral-red"] {
+                --button-primary: var(--gruvbox-neutral-red);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="neutral-green"] {
+                --button-primary: var(--gruvbox-neutral-green);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="neutral-yellow"] {
+                --button-primary: var(--gruvbox-neutral-yellow);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="neutral-blue"] {
+                --button-primary: var(--gruvbox-neutral-blue);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="neutral-purple"] {
+                --button-primary: var(--gruvbox-neutral-purple);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="neutral-aqua"] {
+                --button-primary: var(--gruvbox-neutral-aqua);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="neutral-orange"] {
+                --button-primary: var(--gruvbox-neutral-orange);
+                --button-secondary: var(--background0);
+            }
+        }
+    }
+
+    [data-webtui-theme="gruvbox"] {
+        [is-~="badge"] {
+            /* Dark shades */
+            &[variant-="dark0-hard"] {
+                --badge-color: var(--gruvbox-dark0-hard);
+                --badge-text: var(--foreground0);
+            }
+
+            &[variant-="dark0"] {
+                --badge-color: var(--gruvbox-dark0);
+                --badge-text: var(--foreground0);
+            }
+
+            &[variant-="dark0-soft"] {
+                --badge-color: var(--gruvbox-dark0-soft);
+                --badge-text: var(--foreground0);
+            }
+
+            &[variant-="dark1"] {
+                --badge-color: var(--gruvbox-dark1);
+                --badge-text: var(--foreground0);
+            }
+
+            &[variant-="dark2"] {
+                --badge-color: var(--gruvbox-dark2);
+                --badge-text: var(--foreground0);
+            }
+
+            &[variant-="dark3"] {
+                --badge-color: var(--gruvbox-dark3);
+                --badge-text: var(--foreground0);
+            }
+
+            &[variant-="dark4"] {
+                --badge-color: var(--gruvbox-dark4);
+                --badge-text: var(--foreground0);
+            }
+
+            /* Light shades */
+            &[variant-="light0-hard"] {
+                --badge-color: var(--gruvbox-light0-hard);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="light0"] {
+                --badge-color: var(--gruvbox-light0);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="light0-soft"] {
+                --badge-color: var(--gruvbox-light0-soft);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="light1"] {
+                --badge-color: var(--gruvbox-light1);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="light2"] {
+                --badge-color: var(--gruvbox-light2);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="light3"] {
+                --badge-color: var(--gruvbox-light3);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="light4"] {
+                --badge-color: var(--gruvbox-light4);
+                --badge-text: var(--background0);
+            }
+
+            /* Bright accent colors */
+            &[variant-="bright-red"] {
+                --badge-color: var(--gruvbox-bright-red);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="bright-green"] {
+                --badge-color: var(--gruvbox-bright-green);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="bright-yellow"] {
+                --badge-color: var(--gruvbox-bright-yellow);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="bright-blue"] {
+                --badge-color: var(--gruvbox-bright-blue);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="bright-purple"] {
+                --badge-color: var(--gruvbox-bright-purple);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="bright-aqua"] {
+                --badge-color: var(--gruvbox-bright-aqua);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="bright-orange"] {
+                --badge-color: var(--gruvbox-bright-orange);
+                --badge-text: var(--background0);
+            }
+
+            /* Neutral accent colors */
+            &[variant-="neutral-red"] {
+                --badge-color: var(--gruvbox-neutral-red);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="neutral-green"] {
+                --badge-color: var(--gruvbox-neutral-green);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="neutral-yellow"] {
+                --badge-color: var(--gruvbox-neutral-yellow);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="neutral-blue"] {
+                --badge-color: var(--gruvbox-neutral-blue);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="neutral-purple"] {
+                --badge-color: var(--gruvbox-neutral-purple);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="neutral-aqua"] {
+                --badge-color: var(--gruvbox-neutral-aqua);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="neutral-orange"] {
+                --badge-color: var(--gruvbox-neutral-orange);
+                --badge-text: var(--background0);
+            }
+        }
+    }
+}

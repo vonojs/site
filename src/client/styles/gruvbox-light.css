@@ -1,0 +1,376 @@
+@layer base {
+    [data-webtui-theme="gruvbox-light"] {
+        /* Gruvbox Light Background Colors */
+        --gruvbox-light0-hard: #f9f5d7;
+        --gruvbox-light0: #fbf1c7;
+        --gruvbox-light0-soft: #f2e5bc;
+        --gruvbox-light1: #ebdbb2;
+        --gruvbox-light2: #d5c4a1;
+        --gruvbox-light3: #bdae93;
+        --gruvbox-light4: #a89984;
+
+        /* Gruvbox Dark Foreground Colors */
+        --gruvbox-dark0-hard: #1d2021;
+        --gruvbox-dark0: #282828;
+        --gruvbox-dark0-soft: #32302f;
+        --gruvbox-dark1: #3c3836;
+        --gruvbox-dark2: #504945;
+        --gruvbox-dark3: #665c54;
+        --gruvbox-dark4: #7c6f64;
+
+        /* Gruvbox Accent Colors (Faded for light theme) */
+        --gruvbox-faded-red: #9d0006;
+        --gruvbox-faded-green: #79740e;
+        --gruvbox-faded-yellow: #b57614;
+        --gruvbox-faded-blue: #076678;
+        --gruvbox-faded-purple: #8f3f71;
+        --gruvbox-faded-aqua: #427b58;
+        --gruvbox-faded-orange: #af3a03;
+
+        /* Gruvbox Bright Colors */
+        --gruvbox-bright-red: #cc241d;
+        --gruvbox-bright-green: #98971a;
+        --gruvbox-bright-yellow: #d79921;
+        --gruvbox-bright-blue: #458588;
+        --gruvbox-bright-purple: #b16286;
+        --gruvbox-bright-aqua: #689d6a;
+        --gruvbox-bright-orange: #d65d0e;
+
+        /* Background/Foreground Mapping (inverted for light theme) */
+        --background0: var(--gruvbox-light0);
+        --background1: var(--gruvbox-light1);
+        --background2: var(--gruvbox-light2);
+        --background3: var(--gruvbox-light3);
+
+        --foreground0: var(--gruvbox-dark0);
+        --foreground1: var(--gruvbox-dark1);
+        --foreground2: var(--gruvbox-dark2);
+    }
+}
+
+@layer components {
+    [data-webtui-theme="gruvbox-light"] {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--gruvbox-faded-green);
+        }
+
+        p,
+        blockquote,
+        li,
+        [is-~="typography-block"] {
+            a {
+                color: var(--gruvbox-faded-blue);
+                text-decoration: underline;
+
+                &:hover {
+                    color: var(--gruvbox-bright-blue);
+                }
+            }
+
+            code {
+                color: var(--gruvbox-faded-orange);
+            }
+        }
+    }
+
+    [data-webtui-theme="gruvbox-light"] {
+        button {
+            /* Light shades */
+            &[variant-="light0-hard"] {
+                --button-primary: var(--gruvbox-light0-hard);
+                --button-secondary: var(--foreground0);
+            }
+
+            &[variant-="light0"] {
+                --button-primary: var(--gruvbox-light0);
+                --button-secondary: var(--foreground0);
+            }
+
+            &[variant-="light0-soft"] {
+                --button-primary: var(--gruvbox-light0-soft);
+                --button-secondary: var(--foreground0);
+            }
+
+            &[variant-="light1"] {
+                --button-primary: var(--gruvbox-light1);
+                --button-secondary: var(--foreground0);
+            }
+
+            &[variant-="light2"] {
+                --button-primary: var(--gruvbox-light2);
+                --button-secondary: var(--foreground0);
+            }
+
+            &[variant-="light3"] {
+                --button-primary: var(--gruvbox-light3);
+                --button-secondary: var(--foreground0);
+            }
+
+            &[variant-="light4"] {
+                --button-primary: var(--gruvbox-light4);
+                --button-secondary: var(--foreground0);
+            }
+
+            /* Dark shades */
+            &[variant-="dark0-hard"] {
+                --button-primary: var(--gruvbox-dark0-hard);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="dark0"] {
+                --button-primary: var(--gruvbox-dark0);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="dark0-soft"] {
+                --button-primary: var(--gruvbox-dark0-soft);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="dark1"] {
+                --button-primary: var(--gruvbox-dark1);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="dark2"] {
+                --button-primary: var(--gruvbox-dark2);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="dark3"] {
+                --button-primary: var(--gruvbox-dark3);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="dark4"] {
+                --button-primary: var(--gruvbox-dark4);
+                --button-secondary: var(--background0);
+            }
+
+            /* Faded accent colors (better for light themes) */
+            &[variant-="faded-red"] {
+                --button-primary: var(--gruvbox-faded-red);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="faded-green"] {
+                --button-primary: var(--gruvbox-faded-green);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="faded-yellow"] {
+                --button-primary: var(--gruvbox-faded-yellow);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="faded-blue"] {
+                --button-primary: var(--gruvbox-faded-blue);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="faded-purple"] {
+                --button-primary: var(--gruvbox-faded-purple);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="faded-aqua"] {
+                --button-primary: var(--gruvbox-faded-aqua);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="faded-orange"] {
+                --button-primary: var(--gruvbox-faded-orange);
+                --button-secondary: var(--background0);
+            }
+
+            /* Bright accent colors */
+            &[variant-="bright-red"] {
+                --button-primary: var(--gruvbox-bright-red);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="bright-green"] {
+                --button-primary: var(--gruvbox-bright-green);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="bright-yellow"] {
+                --button-primary: var(--gruvbox-bright-yellow);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="bright-blue"] {
+                --button-primary: var(--gruvbox-bright-blue);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="bright-purple"] {
+                --button-primary: var(--gruvbox-bright-purple);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="bright-aqua"] {
+                --button-primary: var(--gruvbox-bright-aqua);
+                --button-secondary: var(--background0);
+            }
+
+            &[variant-="bright-orange"] {
+                --button-primary: var(--gruvbox-bright-orange);
+                --button-secondary: var(--background0);
+            }
+        }
+    }
+
+    [data-webtui-theme="gruvbox-light"] {
+        [is-~="badge"] {
+            /* Light shades */
+            &[variant-="light0-hard"] {
+                --badge-color: var(--gruvbox-light0-hard);
+                --badge-text: var(--foreground0);
+            }
+
+            &[variant-="light0"] {
+                --badge-color: var(--gruvbox-light0);
+                --badge-text: var(--foreground0);
+            }
+
+            &[variant-="light0-soft"] {
+                --badge-color: var(--gruvbox-light0-soft);
+                --badge-text: var(--foreground0);
+            }
+
+            &[variant-="light1"] {
+                --badge-color: var(--gruvbox-light1);
+                --badge-text: var(--foreground0);
+            }
+
+            &[variant-="light2"] {
+                --badge-color: var(--gruvbox-light2);
+                --badge-text: var(--foreground0);
+            }
+
+            &[variant-="light3"] {
+                --badge-color: var(--gruvbox-light3);
+                --badge-text: var(--foreground0);
+            }
+
+            &[variant-="light4"] {
+                --badge-color: var(--gruvbox-light4);
+                --badge-text: var(--foreground0);
+            }
+
+            /* Dark shades */
+            &[variant-="dark0-hard"] {
+                --badge-color: var(--gruvbox-dark0-hard);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="dark0"] {
+                --badge-color: var(--gruvbox-dark0);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="dark0-soft"] {
+                --badge-color: var(--gruvbox-dark0-soft);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="dark1"] {
+                --badge-color: var(--gruvbox-dark1);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="dark2"] {
+                --badge-color: var(--gruvbox-dark2);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="dark3"] {
+                --badge-color: var(--gruvbox-dark3);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="dark4"] {
+                --badge-color: var(--gruvbox-dark4);
+                --badge-text: var(--background0);
+            }
+
+            /* Faded accent colors (better for light themes) */
+            &[variant-="faded-red"] {
+                --badge-color: var(--gruvbox-faded-red);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="faded-green"] {
+                --badge-color: var(--gruvbox-faded-green);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="faded-yellow"] {
+                --badge-color: var(--gruvbox-faded-yellow);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="faded-blue"] {
+                --badge-color: var(--gruvbox-faded-blue);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="faded-purple"] {
+                --badge-color: var(--gruvbox-faded-purple);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="faded-aqua"] {
+                --badge-color: var(--gruvbox-faded-aqua);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="faded-orange"] {
+                --badge-color: var(--gruvbox-faded-orange);
+                --badge-text: var(--background0);
+            }
+
+            /* Bright accent colors */
+            &[variant-="bright-red"] {
+                --badge-color: var(--gruvbox-bright-red);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="bright-green"] {
+                --badge-color: var(--gruvbox-bright-green);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="bright-yellow"] {
+                --badge-color: var(--gruvbox-bright-yellow);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="bright-blue"] {
+                --badge-color: var(--gruvbox-bright-blue);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="bright-purple"] {
+                --badge-color: var(--gruvbox-bright-purple);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="bright-aqua"] {
+                --badge-color: var(--gruvbox-bright-aqua);
+                --badge-text: var(--background0);
+            }
+
+            &[variant-="bright-orange"] {
+                --badge-color: var(--gruvbox-bright-orange);
+                --badge-text: var(--background0);
+            }
+        }
+    }
+}

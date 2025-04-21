@@ -16,7 +16,21 @@ export default defineConfig({
 		mdx({
 			providerImportSource: "@mdx-js/react",
 			rehypePlugins: [
-				[rehypeShiki, { themes: { light: "catppuccin-latte", dark: "catppuccin-mocha" } }],
+				[rehypeShiki, {
+					themes: {
+						nord: "nord",
+						"nord-light": "min-light",
+						"cat-latte": "catppuccin-latte",
+						"cat-mocha": "catppuccin-mocha",
+						"gruvbox": "gruvbox-dark-soft",
+						"gruvbox-light": "gruvbox-light-soft",
+						"light": "min-light",
+						"dark": "min-dark",
+						"rosepine-light": "rose-pine-dawn",
+						"rosepine-dark": "rose-pine",
+					},
+					defaultColor: false,
+				}],
 			]
 		}),
 		react(),
