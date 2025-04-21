@@ -1,0 +1,81 @@
+import { Tooltip } from "@100x/webtui-react";
+import Link from "../src/client/components/link"
+import { Book, GithubIcon, Lightbulb } from "lucide-react";
+
+# Vono.js
+
+Vono.js is a Vite plugin that adds a custom server to Vite apps and can build for cloud providers.
+
+<Box
+    border
+    contain={"!top"}
+>
+    <Text
+        css={{
+            display: "inline-block",
+            padding: "0 1ch",
+            backgroundColor: "var(--background0)",
+            marginBottom: "1ch",
+        }}
+    >
+        <span>Contents</span>
+    </Text>
+    <Box
+        as={"ul"}
+        css={{
+            display: "flex",
+            flexDirection: "column",
+            gap: ".15lh",
+            paddingLeft: "1ch",
+        }}
+    >
+        <Box as={"li"}>
+            <Tooltip content={"go to documentation"}>
+                <Box
+                    as={Link}
+                    href={"/docs"}
+                    css={{
+                        alignItems: "center",
+                        gap: "0.5ch",
+                        display: "inline-flex",
+                    }}
+                >
+                    <Book size={"16px"} className="opacity-50"/>
+                    <span>Docs</span>
+                </Box>
+            </Tooltip>
+        </Box>
+        <Box as={"li"}>
+            <Tooltip content={"link to examples"}>
+                <Box as={Link}
+                     href={"/examples"}
+                     css={{
+                         display: "inline-flex",
+                         alignItems: "center",
+                         gap: "0.5ch",
+                     }}
+                >
+                    <Lightbulb size={"16px"} className="opacity-50"/>
+                    <span>Examples</span>
+                </Box>
+            </Tooltip>
+        </Box>
+        <Box as={"li"}>
+            <Tooltip content={"link to github repo"}>
+                <Box
+                    as={"a"}
+                    href={"https://github.com"}
+                    target={"_blank"}
+                    css={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "0.5ch",
+                    }}
+                >
+                    <GithubIcon size={"16px"} className="opacity-50"/>
+                    <span>Github</span>
+                </Box>
+            </Tooltip>
+        </Box>
+    </Box>
+</Box>
