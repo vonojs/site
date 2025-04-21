@@ -30,7 +30,7 @@
 }
 
 @layer components {
-    [data-webtui-theme="rose-pine"] {
+    [data-webtui-theme="rosepine-dark"] {
         h1,
         h2,
         h3,
@@ -59,7 +59,7 @@
         }
     }
 
-    [data-webtui-theme="rose-pine"] {
+    [data-webtui-theme="rosepine-dark"] {
         button {
             /* Base colors */
             &[variant-="base"] {
@@ -126,7 +126,7 @@
         }
     }
 
-    [data-webtui-theme="rose-pine"] {
+    [data-webtui-theme="rosepine-dark"] {
         [is-~="badge"] {
             /* Base colors */
             &[variant-="base"] {
